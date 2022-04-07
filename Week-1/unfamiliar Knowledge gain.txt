@@ -1,6 +1,0 @@
-Node JS
-Browser-sync
-Github Pages (something that you can add a theme to your repository) here's mine: https://gittygrubhub85.github.io/coursera-test/
-
-
-

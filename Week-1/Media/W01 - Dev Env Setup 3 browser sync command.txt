@@ -1,0 +1,3 @@
+browser-sync start --server --directory --files "*"
+
+a brief explanation about this command is at 15:30
