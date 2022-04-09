@@ -1,0 +1,8 @@
+To know more about Doctype, look up to this video: https://www.youtube.com/watch?v=5E1eQ_gNmyU
+
+
+To know more about charset look up to this video: https://www.youtube.com/watch?v=kxA3qD9o7Bk
+
+charset using UTF-8 is used for displaying any character from any different human languages without issues.
+Such as having non-English characters to display in the webpage. charset UTF-8 is the character encoder to
+display foreign langauges without issues to any browsers. 

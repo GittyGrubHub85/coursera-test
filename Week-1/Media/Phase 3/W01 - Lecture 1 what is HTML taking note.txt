@@ -1,0 +1,20 @@
+H
+T
+it means hypertext which contains links to other texts.
+hypermedia also associates with hypertext.
+In my perspective, it's kinda like <a src="file.html">link</a>
+
+M
+Markup, it means to annotate, mark something up.
+sample: <title>My Title</title>
+
+L
+it's a language
+it has its own semantics- tag names mean something either to machines or humans.
+
+
+HTML only tells you what are the components. Meaning what their color, font size look like.
+CSS let you tell what color and font size is.
+Javascript provide behavior and functionality. Such as what happens when html document finishes loading the browser.
+
+3 of them have distinct unique roles, they don't really step on each other, they work nicely together.

@@ -1,0 +1,3 @@
+I really don't understand what <meta charset="UTF-8"> really means.
+I know that it's all about ASCII code or something but why was my html file still working without them?
+I heard the tag is recommended to have in every file so that... I don't know...

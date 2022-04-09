@@ -1,10 +1,21 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="en"> <!--adding lang attribute is important to set the default language of the page: https://www.w3.org/International/tutorials/language-decl/#:~:text=Always%20add%20a%20lang%20attribute,default%20language%20of%20your%20page.&text=If%20this%20is%20XHTML%201,use%20the%20xml%3Alang%20attribute.-->
 <head>
 	<meta charset="utf-8">
 	<title>Hello Coursera</title>
-	<style type="text/css">
-		
+	<style>
+		#fletter{
+   		display:block;
+		}
+		#fletter:first-letter {
+		    font-weight: 600;
+			font-size: 25px;
+		}
+
+		[id^="t"] {
+		  font-size: 50px;
+		}
 		p::first-letter{
 			font-weight: 600;
 			font-size: 25px;

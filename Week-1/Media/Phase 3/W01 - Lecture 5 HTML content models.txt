@@ -1,0 +1,7 @@
+div is a block element which means it requires its own new line
+
+span is an inline element which means it goes to the side of the line without requiring a new line.
+
+
+<div></div><span></span> causes to add 2 new lines as div requires to be its own line it 
+pushes the next inline element to its own line as well.
