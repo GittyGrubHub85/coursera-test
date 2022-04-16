@@ -1,0 +1,683 @@
+WEBVTT
+
+1
+00:00:00.125 --> 00:00:02.967
+[MUSIC]
+
+2
+00:00:06.266 --> 00:00:09.261
+Cascading is a fundamental feature of CSS.
+
+3
+00:00:09.261 --> 00:00:13.370
+It's an algorithm defining how to combine
+properties values originating from
+
+4
+00:00:13.370 --> 00:00:15.080
+different sources.
+
+5
+00:00:15.080 --> 00:00:19.320
+As the name itself suggests, cascading
+style sheets, in other words the cascade
+
+6
+00:00:19.320 --> 00:00:23.240
+algorithm, is at the core of
+understanding and using CSS.
+
+7
+00:00:23.240 --> 00:00:27.020
+The cascade combine the importance,
+origin, specificity and
+
+8
+00:00:27.020 --> 00:00:29.930
+source order of the applicable
+style declarations
+
+9
+00:00:29.930 --> 00:00:34.610
+to determine exactly which declaration
+should be applied to any given element.
+
+10
+00:00:34.610 --> 00:00:37.490
+And if there's a conflict,
+how to resolve that conflict.
+
+11
+00:00:37.490 --> 00:00:42.899
+In other words,
+how to tell which CSS rule wins.
+
+12
+00:00:42.899 --> 00:00:44.691
+There are a lot of terminology and
+
+13
+00:00:44.691 --> 00:00:47.630
+concepts surrounding
+the cascading algorithm.
+
+14
+00:00:47.630 --> 00:00:52.290
+However, I believe to have a working
+knowledge of the cascading algorithm,
+
+15
+00:00:52.290 --> 00:00:54.360
+you should understand these four concepts.
+
+16
+00:00:54.360 --> 00:00:57.290
+And these are origin,
+or origin precedence,
+
+17
+00:00:57.290 --> 00:01:00.740
+merge, as well as inheritance and
+specificity.
+
+18
+00:01:00.740 --> 00:01:03.760
+So let's tackle the first two,
+origin and merge.
+
+19
+00:01:03.760 --> 00:01:05.650
+When two declarations are in conflict,
+
+20
+00:01:05.650 --> 00:01:08.350
+in other words they specify
+the same property for
+
+21
+00:01:08.350 --> 00:01:13.280
+the same target, origin precedence rule
+kicks in, and it's a very simple rule.
+
+22
+00:01:13.280 --> 00:01:16.300
+And the rule is,
+the last declaration wins.
+
+23
+00:01:16.300 --> 00:01:19.615
+Now, when trying to figure out
+what the last declaration is,
+
+24
+00:01:19.615 --> 00:01:22.822
+you have to remember that HTML
+is processed sequentially.
+
+25
+00:01:22.822 --> 00:01:24.400
+That means top to bottom.
+
+26
+00:01:24.400 --> 00:01:27.308
+So as you see the declarations happen,
+
+27
+00:01:27.308 --> 00:01:32.710
+the lower on the page they are,
+the more precedence they have.
+
+28
+00:01:32.710 --> 00:01:34.830
+And also for precedence,
+
+29
+00:01:34.830 --> 00:01:39.640
+think of external CSS as declared
+at the spot where it's linked to.
+
+30
+00:01:39.640 --> 00:01:42.320
+So usually it's declared
+in the head somewhere, but
+
+31
+00:01:42.320 --> 00:01:44.990
+there could be other styles
+that I declared in the head.
+
+32
+00:01:44.990 --> 00:01:47.870
+And to figure out which
+one was declared last,
+
+33
+00:01:47.870 --> 00:01:52.710
+imagine that the entire contents of
+an external CSS file were cut and
+
+34
+00:01:52.710 --> 00:01:58.008
+pasted straight into the head portion,
+where that external CSS is declared.
+
+35
+00:01:58.008 --> 00:02:01.890
+When different CSS declarations
+do not conflict, that is,
+
+36
+00:02:01.890 --> 00:02:06.890
+they still target the same element, but
+the CSS properties with which they target
+
+37
+00:02:06.890 --> 00:02:09.990
+that element are different,
+there's even a simpler rule.
+
+38
+00:02:09.990 --> 00:02:12.380
+And that is that declarations merge.
+
+39
+00:02:12.380 --> 00:02:17.510
+So a declaration for, for example, font
+size, and a declaration for color, since
+
+40
+00:02:17.510 --> 00:02:22.040
+they're two different properties, when
+they're targeted to the same element, even
+
+41
+00:02:22.040 --> 00:02:26.850
+if they're targeted from two different
+origins, they will merge into one.
+
+42
+00:02:26.850 --> 00:02:30.620
+And the element will get both
+the font size and the color.
+
+43
+00:02:30.620 --> 00:02:33.630
+Let's take a quick look at
+an example of that in code.
+
+44
+00:02:33.630 --> 00:02:37.130
+Okay, so here I am in Sublime Text and
+I'm looking at origin.html.
+
+45
+00:02:37.130 --> 00:02:41.740
+And it's located in
+the examples Lecture17 folder.
+
+46
+00:02:41.740 --> 00:02:45.530
+Let me go ahead and hide the sidebar so
+we could see the file a little bit better.
+
+47
+00:02:45.530 --> 00:02:50.730
+So to go over the structure of our HTML,
+in the head we have a link that links
+
+48
+00:02:50.730 --> 00:02:55.710
+our external.css, which is also located
+in the same folder as this file, and
+
+49
+00:02:55.710 --> 00:02:57.750
+you could see that file is right here.
+
+50
+00:02:57.750 --> 00:03:00.630
+And it specifies that every p,
+
+51
+00:03:00.630 --> 00:03:04.330
+every paragraph tag,
+should have font size increased to 130%,
+
+52
+00:03:04.330 --> 00:03:09.640
+the background will be gray, and
+the color of the text will be white.
+
+53
+00:03:09.640 --> 00:03:11.870
+Now, right after that,
+we have a style tag, again,
+
+54
+00:03:11.870 --> 00:03:15.860
+still in the head,
+that overwrites the p element and
+
+55
+00:03:15.860 --> 00:03:19.560
+says that the color, that is,
+the text color, should be maroon.
+
+56
+00:03:19.560 --> 00:03:21.970
+Now, when we get to
+the actual viewable content,
+
+57
+00:03:21.970 --> 00:03:23.800
+we have a couple of paragraphs here.
+
+58
+00:03:23.800 --> 00:03:27.530
+The first one is just a simple paragraph
+and the second one is a paragraph where
+
+59
+00:03:27.530 --> 00:03:33.610
+we've declared an attribute style and
+specified color of the text to be black.
+
+60
+00:03:33.610 --> 00:03:35.190
+So let's take a look at
+the first paragraph.
+
+61
+00:03:35.190 --> 00:03:38.140
+You could see that the background
+of the paragraph is gray and
+
+62
+00:03:38.140 --> 00:03:39.960
+the text color is maroon.
+
+63
+00:03:39.960 --> 00:03:42.150
+Now, how do we get this gray and maroon?
+
+64
+00:03:42.150 --> 00:03:43.190
+Well, let's take a look.
+
+65
+00:03:43.190 --> 00:03:44.985
+We first declared external.css.
+
+66
+00:03:44.985 --> 00:03:48.550
+That's the first thing that
+comes in the HTML file.
+
+67
+00:03:48.550 --> 00:03:53.850
+So remember, I told you to think about it
+as if we basically took these contents and
+
+68
+00:03:53.850 --> 00:03:56.060
+pasted them straight into this spot.
+
+69
+00:03:56.060 --> 00:04:00.260
+So basically we've declared we want
+the font size to be increased,
+
+70
+00:04:00.260 --> 00:04:03.840
+the background color should be gray,
+and the text color should be white.
+
+71
+00:04:03.840 --> 00:04:08.020
+However, right after that,
+we turned around and overwritten that
+
+72
+00:04:08.020 --> 00:04:12.630
+with another color declaration and said
+that the color in fact should be maroon.
+
+73
+00:04:12.630 --> 00:04:16.563
+And that's really the last thing that we
+could see as far as the text color of our
+
+74
+00:04:16.563 --> 00:04:17.463
+paragraph text.
+
+75
+00:04:17.463 --> 00:04:22.618
+And that is why this paragraph right here
+does in fact have its text color maroon.
+
+76
+00:04:22.618 --> 00:04:25.961
+That is because of the last
+declaration of that color, one.
+
+77
+00:04:25.961 --> 00:04:30.450
+The second paragraph, however, has its
+text color black because the very last
+
+78
+00:04:30.450 --> 00:04:34.888
+declaration of the text color is black,
+so therefore the text color is black.
+
+79
+00:04:34.888 --> 00:04:38.080
+So that's our origin
+precedence rule in action.
+
+80
+00:04:38.080 --> 00:04:42.110
+However, unlike the color property,
+we have other properties here,
+
+81
+00:04:42.110 --> 00:04:46.520
+which are the background color and
+the font size, that are still being
+
+82
+00:04:46.520 --> 00:04:50.700
+applied to both paragraphs and
+that's our example of a merge.
+
+83
+00:04:50.700 --> 00:04:54.428
+In fact, if we right-click on
+this paragraph and go ahead and
+
+84
+00:04:54.428 --> 00:04:58.874
+inspect the element, we can see that
+the first paragraph does in fact have
+
+85
+00:04:58.874 --> 00:05:02.910
+the color: maroon and
+it's coming from origin.html, line 9.
+
+86
+00:05:02.910 --> 00:05:05.789
+That's our style tag
+inside our head section.
+
+87
+00:05:05.789 --> 00:05:10.059
+But you could see that it's showing
+you that other things apply as well,
+
+88
+00:05:10.059 --> 00:05:13.497
+that background color is gray and
+the font size is 130.
+
+89
+00:05:13.497 --> 00:05:18.123
+And the Chrome developer tools are clearly
+showing you here that we've overwritten
+
+90
+00:05:18.123 --> 00:05:22.110
+the color that was specified in
+external.css with our color: maroon.
+
+91
+00:05:22.110 --> 00:05:24.380
+And that's why you see
+the color crossed out here.
+
+92
+00:05:26.560 --> 00:05:29.290
+The next concept we're going to
+take a look at is inheritance.
+
+93
+00:05:29.290 --> 00:05:30.920
+And it's a pretty simple concept.
+
+94
+00:05:30.920 --> 00:05:35.010
+The basic idea is that you have
+the document object model tree.
+
+95
+00:05:35.010 --> 00:05:40.310
+And if you specify some CSS property
+on some element, all the children and
+
+96
+00:05:40.310 --> 00:05:44.810
+grandchildren and so on and so
+on of that element will also inherit that
+
+97
+00:05:44.810 --> 00:05:50.090
+property without you having to specify
+the property for each and every element.
+
+98
+00:05:50.090 --> 00:05:54.010
+So for example,
+if I specify one property on the body tag,
+
+99
+00:05:54.010 --> 00:05:57.330
+every element that is
+a child of a body tag, or
+
+100
+00:05:57.330 --> 00:06:02.400
+even a child of a child of a body tag and
+so on, will inherit that property.
+
+101
+00:06:02.400 --> 00:06:08.308
+Similarly, if I specify a property on
+some element within my HTML page, every
+
+102
+00:06:08.308 --> 00:06:14.318
+child and grandchild and so on of that
+element will also inherit that property.
+
+103
+00:06:14.318 --> 00:06:18.381
+But obviously, no parents of that
+element will inherit that property and
+
+104
+00:06:18.381 --> 00:06:21.110
+therefore will be completely
+unaffected by it.
+
+105
+00:06:21.110 --> 00:06:24.870
+So let's take a look at what
+inheritance looks like in code.
+
+106
+00:06:24.870 --> 00:06:28.620
+While inheritance in CSS is a pretty
+simple concept to understand,
+
+107
+00:06:28.620 --> 00:06:31.400
+it happens to be a very
+powerful technique as well.
+
+108
+00:06:31.400 --> 00:06:34.130
+It allows me to specify one rule and
+
+109
+00:06:34.130 --> 00:06:37.390
+have all the children of the target
+element inherit that rule.
+
+110
+00:06:37.390 --> 00:06:39.605
+Let's take a look at inheritence.html,
+
+111
+00:06:39.605 --> 00:06:42.415
+which is also located in the same
+folder as the previous file.
+
+112
+00:06:42.415 --> 00:06:46.985
+It's a very common practice to specify
+some declarations for the body tag and
+
+113
+00:06:46.985 --> 00:06:47.935
+the reason is obvious.
+
+114
+00:06:47.935 --> 00:06:52.205
+Body is the top element in our HTML
+as far as the view port is concerned.
+
+115
+00:06:52.205 --> 00:06:55.930
+In it, I can specify some rules for
+the entire HTML document and
+
+116
+00:06:55.930 --> 00:07:00.740
+then using our cascade origin precedence,
+overwrite some specific rules a little bit
+
+117
+00:07:00.740 --> 00:07:04.030
+lower down the line, while keeping
+everything else very consistent.
+
+118
+00:07:04.030 --> 00:07:05.820
+So here in our example, as you can see,
+
+119
+00:07:05.820 --> 00:07:10.710
+I specified that any text appearing
+in our document should be color: red.
+
+120
+00:07:10.710 --> 00:07:14.540
+And I also specified that everything
+should be align: center and,
+
+121
+00:07:14.540 --> 00:07:17.970
+which is very common,
+to specify one font that will be
+
+122
+00:07:17.970 --> 00:07:22.640
+consistent throughout the entire HTML
+document, in this case, Helvetica.
+
+123
+00:07:22.640 --> 00:07:27.070
+Then what I did was I specified
+a particular color of the text just for
+
+124
+00:07:27.070 --> 00:07:27.980
+paragraphs.
+
+125
+00:07:27.980 --> 00:07:31.450
+And even though each paragraph
+will inherit color: red,
+
+126
+00:07:31.450 --> 00:07:34.760
+we're here to override
+that with color: blue.
+
+127
+00:07:34.760 --> 00:07:38.870
+Last, in the H2 tag here a little
+bit lower to the bottom, I'm using
+
+128
+00:07:38.870 --> 00:07:43.120
+again the origin precedence rules to
+over write the text color to green for
+
+129
+00:07:43.120 --> 00:07:45.110
+this particular subheading too.
+
+130
+00:07:45.110 --> 00:07:50.420
+And as you can see, our H1 here in
+the browser is red and so is the first H2.
+
+131
+00:07:50.420 --> 00:07:54.680
+And they're red even though I never
+specified H1 or H2 to be red.
+
+132
+00:07:54.680 --> 00:07:57.980
+I just said that anything inside the body,
+color should be red.
+
+133
+00:07:57.980 --> 00:08:02.970
+And you notice that every single block
+level element here is centered, and
+
+134
+00:08:02.970 --> 00:08:06.090
+the reason it's centered is because
+I specified again in the body that
+
+135
+00:08:06.090 --> 00:08:07.680
+the text-align should be centered.
+
+136
+00:08:07.680 --> 00:08:08.858
+Same goes for font-family.
+
+137
+00:08:08.858 --> 00:08:11.480
+It's Helvetica throughout
+the entire document.
+
+138
+00:08:11.480 --> 00:08:15.520
+Again, I never specified text-align or
+font-family for every single
+
+139
+00:08:15.520 --> 00:08:20.160
+element in the page, but I did specify
+it for the parent element, the body tag.
+
+140
+00:08:20.160 --> 00:08:23.050
+So as you can see,
+this is pretty powerful.
+
+141
+00:08:23.050 --> 00:08:26.171
+Okay, so since this lecture
+is getting a little too long,
+
+142
+00:08:26.171 --> 00:08:29.690
+I'm going to split it up and
+we'll finish specificity in part two.

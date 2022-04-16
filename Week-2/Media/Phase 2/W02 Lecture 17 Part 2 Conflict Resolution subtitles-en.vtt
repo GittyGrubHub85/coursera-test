@@ -1,0 +1,543 @@
+WEBVTT
+
+1
+00:00:00.012 --> 00:00:08.020
+[SOUND] Next, let's talk about
+the concept of specificity.
+
+2
+00:00:08.020 --> 00:00:10.730
+Now specificity also has
+a pretty simple rule, and
+
+3
+00:00:10.730 --> 00:00:14.300
+that is most specific
+selector combination wins.
+
+4
+00:00:14.300 --> 00:00:16.680
+While this is a pretty
+simple sounding rule,
+
+5
+00:00:16.680 --> 00:00:20.140
+I would say that forgetting about
+the concept of specificity and
+
+6
+00:00:20.140 --> 00:00:24.090
+how its simple method in CSS is what
+trips up developers most often.
+
+7
+00:00:24.090 --> 00:00:27.900
+Let me show you a pretty straightforward
+technique that will let you figure out
+
+8
+00:00:27.900 --> 00:00:32.220
+which selector combinations
+are most specific than others.
+
+9
+00:00:32.220 --> 00:00:35.220
+You can think of specificity of
+your selectors as keeping a score.
+
+10
+00:00:35.220 --> 00:00:38.660
+The selectors with the highest score win.
+
+11
+00:00:38.660 --> 00:00:39.310
+In other words,
+
+12
+00:00:39.310 --> 00:00:43.740
+the selectors with the higher score
+would be considered the most specific.
+
+13
+00:00:43.740 --> 00:00:48.010
+It's easier to calculate the score if you
+arrange the types of things that affect
+
+14
+00:00:48.010 --> 00:00:49.650
+the score from left to right,
+
+15
+00:00:49.650 --> 00:00:52.860
+with the left being the highest
+value of specificity.
+
+16
+00:00:52.860 --> 00:00:57.490
+Then simply take your CSS rule and
+fill in the number of times you see
+
+17
+00:00:57.490 --> 00:01:01.300
+a particular type of selector being
+used in it's proper location.
+
+18
+00:01:01.300 --> 00:01:03.900
+The number that's created
+is your final score.
+
+19
+00:01:03.900 --> 00:01:06.150
+So let's take a look at our
+four boxes on the screen.
+
+20
+00:01:06.150 --> 00:01:09.550
+The most specific targeting
+that exists in CSS doesn't
+
+21
+00:01:09.550 --> 00:01:13.890
+actually use any selectors at all and
+that is the style attribute on an element.
+
+22
+00:01:13.890 --> 00:01:17.320
+And that happens when you
+define your CSS declarations
+
+23
+00:01:17.320 --> 00:01:19.510
+straight on the element
+using the style attribute.
+
+24
+00:01:19.510 --> 00:01:23.720
+And that makes perfect sense, right, since
+specifying the style attribute is like
+
+25
+00:01:23.720 --> 00:01:26.810
+pointing to an element with your
+finger and saying, that one.
+
+26
+00:01:26.810 --> 00:01:28.930
+There's nothing more specific than that.
+
+27
+00:01:28.930 --> 00:01:33.820
+And that is why the style
+attribute is the most left box.
+
+28
+00:01:33.820 --> 00:01:38.660
+Next is specificity value, comes the ID,
+then the class or pseudo-class, and
+
+29
+00:01:38.660 --> 00:01:42.120
+then the number of elements that
+are used in your selected combination.
+
+30
+00:01:42.120 --> 00:01:43.510
+So if we tale a look at this example,
+
+31
+00:01:43.510 --> 00:01:48.430
+which says h2 style equals color green
+we see that we're using the style
+
+32
+00:01:48.430 --> 00:01:53.540
+attribute which means this box gets
+a one and the rest of them get a zero.
+
+33
+00:01:53.540 --> 00:01:56.820
+And this is pretty much the highest
+score a thousand that you can get.
+
+34
+00:01:57.920 --> 00:02:02.925
+Take a look at a different selector,
+for example, div p and color green,
+
+35
+00:02:02.925 --> 00:02:06.715
+you see that it's not defined inside
+of a style attribute so that gets a 0.
+
+36
+00:02:06.715 --> 00:02:09.815
+There's no ID selector so that gets a 0.
+
+37
+00:02:09.815 --> 00:02:13.505
+There's no class definition
+selector either so that gets a 0.
+
+38
+00:02:13.505 --> 00:02:15.345
+But there's two elements,
+
+39
+00:02:15.345 --> 00:02:19.455
+here we're using a descendant
+combination of selectors, div and p.
+
+40
+00:02:19.455 --> 00:02:22.265
+So, therefore, the number of
+elements that we have is two.
+
+41
+00:02:22.265 --> 00:02:25.130
+That's why the last box gets the number 2.
+
+42
+00:02:25.130 --> 00:02:27.750
+So let's see how this would
+work if you had to compare and
+
+43
+00:02:27.750 --> 00:02:30.780
+see which one of the selector
+combinations would win.
+
+44
+00:02:30.780 --> 00:02:33.980
+So if you're targeting a particular
+paragraph tag and in one case
+
+45
+00:02:33.980 --> 00:02:38.100
+you're targeting it with the set of
+selectors that are shown on the left side
+
+46
+00:02:38.100 --> 00:02:41.220
+of the screen, and in another case
+you're targeting it with a set of
+
+47
+00:02:41.220 --> 00:02:44.360
+selectors that are shown on the right
+side of the screen, which one would win?
+
+48
+00:02:44.360 --> 00:02:47.140
+In other words,
+the color of the text of that paragraph.
+
+49
+00:02:47.140 --> 00:02:49.350
+Would it be blue, or would it be green?
+
+50
+00:02:49.350 --> 00:02:51.360
+Well let's quickly calculate their scores.
+
+51
+00:02:51.360 --> 00:02:56.180
+The one on the left is not using the style
+attribute, so you know that gets a 0.
+
+52
+00:02:56.180 --> 00:02:59.290
+It does use an idea attribute,
+so that gets a 1.
+
+53
+00:02:59.290 --> 00:03:02.090
+There's no class So that's a 0, and
+
+54
+00:03:02.090 --> 00:03:04.990
+the number of elements is a 1,
+so that gets a 1.
+
+55
+00:03:04.990 --> 00:03:07.580
+So the final score of the left is 101.
+
+56
+00:03:07.580 --> 00:03:12.010
+On the right, likewise we're not using
+the style attribute so that gets a 0.
+
+57
+00:03:12.010 --> 00:03:15.610
+We're not using an ID attribute,
+so that gets a 0 again.
+
+58
+00:03:15.610 --> 00:03:18.790
+We're using one class, so that gets a 1.
+
+59
+00:03:18.790 --> 00:03:22.090
+And we're using two elements so
+that gets a 2.
+
+60
+00:03:22.090 --> 00:03:24.990
+So the score is, 101 versus 12.
+
+61
+00:03:24.990 --> 00:03:27.730
+So obviously the one on the left wins and
+
+62
+00:03:27.730 --> 00:03:31.280
+the text color of our paragraph
+will be blue, not green.
+
+63
+00:03:31.280 --> 00:03:33.180
+Looking at the score on the left and
+
+64
+00:03:33.180 --> 00:03:37.830
+the selectors we've chosen to get that
+score, we could see that we really could
+
+65
+00:03:37.830 --> 00:03:42.360
+have won this selector battle by not
+specifying the div there to begin with.
+
+66
+00:03:42.360 --> 00:03:45.570
+We could have just expressed
+it with an id selector and
+
+67
+00:03:45.570 --> 00:03:47.560
+still would have won this battle and
+
+68
+00:03:47.560 --> 00:03:51.320
+therefore the color of the text to that
+paragraph would have still been blue.
+
+69
+00:03:51.320 --> 00:03:55.225
+So let's jump in to our code editor and
+see this concept in action.
+
+70
+00:03:55.225 --> 00:03:59.334
+Okay, so here we're in sublime text,
+and we're looking at specificity.html.
+
+71
+00:03:59.334 --> 00:04:01.535
+And this is a pretty simple document.
+
+72
+00:04:01.535 --> 00:04:04.625
+All it has is really one paragraph tag,
+and
+
+73
+00:04:04.625 --> 00:04:08.290
+it's sitting inside of a header
+tag with class navigation.
+
+74
+00:04:08.290 --> 00:04:10.250
+If you look at the styles
+that are specified for
+
+75
+00:04:10.250 --> 00:04:12.990
+this document,
+we have two competing styles.
+
+76
+00:04:12.990 --> 00:04:15.630
+One is trying to make the text color blue,
+and
+
+77
+00:04:15.630 --> 00:04:18.390
+the other one is trying to
+make the text color red.
+
+78
+00:04:18.390 --> 00:04:21.760
+Obviously, as you can see on
+the right side in the browser,
+
+79
+00:04:21.760 --> 00:04:24.390
+the text color ends up being blue.
+
+80
+00:04:24.390 --> 00:04:25.170
+Why is that?
+
+81
+00:04:25.170 --> 00:04:27.310
+Well keeping in mind what we just learned,
+
+82
+00:04:27.310 --> 00:04:30.290
+the specificity rule
+here is what's in play.
+
+83
+00:04:30.290 --> 00:04:34.750
+Both rules have one class so
+that gets us a ten.
+
+84
+00:04:34.750 --> 00:04:39.670
+However, the first rule has two elements
+specified and the other one only one.
+
+85
+00:04:39.670 --> 00:04:41.940
+So this gets a score of 12.
+
+86
+00:04:41.940 --> 00:04:43.750
+And this gets a score of 11.
+
+87
+00:04:43.750 --> 00:04:45.640
+So this rule wins.
+
+88
+00:04:45.640 --> 00:04:47.640
+There's one more concept
+that I'd like to show you.
+
+89
+00:04:47.640 --> 00:04:52.640
+And that is a concept of overriding all
+these rules taken all together with
+
+90
+00:04:52.640 --> 00:04:54.250
+the !important.
+
+91
+00:04:54.250 --> 00:04:57.950
+Here we have a third way to
+define this paragraph tag.
+
+92
+00:04:57.950 --> 00:05:00.190
+And its color,
+its text color, to be green.
+
+93
+00:05:00.190 --> 00:05:04.872
+And this time I'm going to define
+it with the word !important.
+
+94
+00:05:04.872 --> 00:05:09.720
+An !important basically says,
+it doesn't matter what the specificity is,
+
+95
+00:05:09.720 --> 00:05:14.170
+I want to override everything and make
+this property they way I'm defining it.
+
+96
+00:05:14.170 --> 00:05:16.230
+So here, we define the color being green.
+
+97
+00:05:16.230 --> 00:05:20.770
+So if we refresh the browser, even
+though this is a much less specific rule
+
+98
+00:05:20.770 --> 00:05:25.770
+then this one, this is just, gets a score
+of 1, and this, remember, is a 12.
+
+99
+00:05:25.770 --> 00:05:31.030
+Since we specify important,
+our color of the text will turn green.
+
+100
+00:05:31.030 --> 00:05:34.470
+Now, I want to warn you
+about using this !important.
+
+101
+00:05:34.470 --> 00:05:38.720
+While very tempting to skip understanding
+all these cascading rules and
+
+102
+00:05:38.720 --> 00:05:43.620
+specificity rules and just slap important
+everywhere whenever things don't work out,
+
+103
+00:05:43.620 --> 00:05:48.020
+this will very quickly on a real world
+project become a maintenance nightmare
+
+104
+00:05:48.020 --> 00:05:50.610
+where you'll be overriding one important
+
+105
+00:05:50.610 --> 00:05:53.730
+declaration with another important
+declaration and you'll basically start
+
+106
+00:05:53.730 --> 00:05:58.560
+working out your own system where gigantic
+mess will be your most important rule.
+
+107
+00:05:58.560 --> 00:06:02.020
+So avoid using important
+unless you absolutely have to.
+
+108
+00:06:02.020 --> 00:06:06.240
+In summary, in this lecture we spoke
+about the Cascading algorithm.
+
+109
+00:06:06.240 --> 00:06:08.308
+The origin, the origin precedents,
+
+110
+00:06:08.308 --> 00:06:12.360
+how the declarations merge as well
+as inheritance and specificity.
+
+111
+00:06:12.360 --> 00:06:17.220
+The Cascading algorithm provides pretty
+precise control over targeting content
+
+112
+00:06:17.220 --> 00:06:21.320
+while allowing you maximum reuse
+of styles across your website, and
+
+113
+00:06:21.320 --> 00:06:24.590
+that is basically what makes CSS so
+powerful.
+
+114
+00:06:24.590 --> 00:06:27.254
+Next, we're going to
+talk about styling text.

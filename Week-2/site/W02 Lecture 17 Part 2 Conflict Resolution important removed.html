@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>W02 Lecture 17 Part 2 Conflict Resolution</title>
+	<style type="text/css">
+		header.navigation p {
+		  color: blue;
+		}
+		p.blurb { /*Sometimes, I thought this should be the selector to be used but it's not. It does make sense header.navigation p is prioritized because it has a descendant of p after it. Removing p from it can prioritize this selector here.*/
+		  color: red;
+		}
+		p {
+		  color: green;
+		}
+	</style>
+</head>
+<body>
+<header class="navigation">
+	<h1>Result below:</h1>
+  <p class="blurb">Text color turns blue since the style's selector used is <span style="text-decoration: underline; font-size: 150%;">header.navigation p</span> as it has a specificity score of 12. While <span style="text-decoration: underline; font-size: 150%;">p</span> selector only has 10, it doesn't win out the selector score of 12.</p>
+  <h1>Screenshot code below:</h1>
+  <img src="W02 Lecture 17 Part 2 Conflict Resolution important removed0_0.png">
+</header>
+</body>
+</html>
