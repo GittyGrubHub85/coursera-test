@@ -5,6 +5,8 @@ You can use the [editor on GitHub](https://github.com/GittyGrubHub85/coursera-te
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
 ![176123](https://user-images.githubusercontent.com/27763628/162180707-e38bd5fc-a165-44ac-8520-95212d081232.jpg)
+![cx-game issue0_2_0](https://user-images.githubusercontent.com/27763628/164193881-b916e183-7f53-42ce-97d5-e0051888baa3.gif)
+
 
 ### Markdown
 
