@@ -1,0 +1,1 @@
+box-sizing: border-box; -> This includes the box size of padding and border box content. The default box sizing has always in the content box and it's annoying.

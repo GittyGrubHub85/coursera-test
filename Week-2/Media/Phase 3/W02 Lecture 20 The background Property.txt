@@ -1,0 +1,8 @@
+body{
+	background-color: blue;
+	background: url("1.png") no-repeat;
+}
+
+This results in removing blue background and just the image alone because having a background selector without a dash
+can cause all of the background contents to renew, this removes the blue background to nothing (default) as well. 
+If you want to add the blue background again, just add it to the side of no-repeat;
